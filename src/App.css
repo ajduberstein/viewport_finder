@@ -1,38 +1,52 @@
-.App {
+#app {
   text-align: center;
+  display: flex;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+#sidebar-div {
+  align-items: center;
   background-color: #282c34;
-  min-height: 100vh;
+  color: white;
+  justify-content: space-between;
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 340px;
+  min-width: 30vw;
+  min-height: 97vh;
+  z-index: 1000;
+  position: relative;
 }
 
-.App-link {
-  color: #61dafb;
+#header {
+  font-size: calc(20px + 2vmin);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#deck-container {
+  position: relative;
+  height: 100vh;
+  width: 70vw;
+}
+
+#text-box {
+  text-align: left;
+  font-family: monospace;
+  white-space: break-spaces;
+  -webkit-user-select: all;  /* Chrome all / Safari all */
+  -moz-user-select: all;     /* Firefox all */
+  -ms-user-select: all;      /* IE 10+ */
+  user-select: all;          /* Likely future */
+  margin-left: 30px;
+}
+
+#zoom-box {
+  margin-bottom: 30px;
+}
+
+.searchlist {
+  cursor: pointer;
+}
+
+.searchlist:hover {
+  color: black;
 }
