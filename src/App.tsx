@@ -128,12 +128,13 @@ export default class App extends React.Component<{}, AppState> {
     return (
       <div id="app">
         <div id="sidebar-div">
+          <h1 id="header">
+            Viewport Finder
+          </h1>
+
           <div>
-            <h1 id="header">
-              Viewport Finder
-            </h1>
-            <p>
-              Find a viewport for use
+            <p id="help">
+              Viewport for use
               within mapping
               applications
             </p>
@@ -170,7 +171,7 @@ export default class App extends React.Component<{}, AppState> {
 
           <div id="zoom-box">
             <label>
-              Zoom to region <br />
+              Zoom to region (OSM Nominatim)<br />
               <input
                 type="text"
                 defaultValue={
