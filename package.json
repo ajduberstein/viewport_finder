@@ -2,6 +2,7 @@
   "name": "viewfinder",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://duberste.in/viewport_finder/",
   "dependencies": {
     "@danmarshall/deckgl-typings": "^4.1.9",
     "@deck.gl/core": "^8.1.9",
