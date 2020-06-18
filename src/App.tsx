@@ -90,10 +90,12 @@ export default class App extends React.Component<{}, AppState> {
     this.setState({ viewState: initialViewState });
   }
 
-  handleKeyDown = (e: any) => {
-    if (e.keyCode === ENTER_KEY) {
-      const text = e.target.value as String;
-      if (!text) {
+  handleKeyDown = (e: any, skipKeyCheck?: boolean) => {
+    if (e.keyCode === ENTER_KEY || skipKeyCheck) {
+      const text = (e.target.value as String).trim();
+      const {searches} = this.state;
+      const lastSearch = searches[searches.length - 1] ? searches[searches.length - 1].searchText : null;
+      if (!text || text === lastSearch) {
         return;
       }
       findLocation(text, (json: any) => {
@@ -174,13 +176,9 @@ export default class App extends React.Component<{}, AppState> {
               Zoom to region (OSM Nominatim)<br />
               <input
                 type="text"
-                defaultValue={
-                  ""
-                }
-                onKeyDown={
-                  this
-                    .handleKeyDown
-                }
+                defaultValue={""}
+                onKeyDown={this.handleKeyDown}
+		onBlur={e => this.handleKeyDown(e, true)}
               ></input>
             </label>
           </div>
